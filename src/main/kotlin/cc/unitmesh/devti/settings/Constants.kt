@@ -1,6 +1,6 @@
 package cc.unitmesh.devti.settings
 
-val OPENAI_MODEL = arrayOf("gpt-3.5-turbo","gpt-3.5-turbo-16k", "gpt-4")
+val OPENAI_MODEL = arrayOf("gpt-3.5-turbo","gpt-3.5-turbo-16k", "gpt-4", "chatglm2-6b")
 val AI_ENGINES = arrayOf("OpenAI", "Custom", "Azure", "XingHuo")
 
 enum class AIEngines {
