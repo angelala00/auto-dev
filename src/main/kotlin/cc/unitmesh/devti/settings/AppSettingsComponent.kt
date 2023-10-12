@@ -31,7 +31,7 @@ class AppSettingsComponent(settings: AutoDevSettingsState) {
     private val gitlabToken = JBPasswordField()
     private val gitlabUrl = JBTextField()
     private val customOpenAiHost = JBTextField()
-    private val openAiModel = ComboBox(OPENAI_MODEL)
+    private val openAiModel = JBTextField()
 
     private val aiEngine = ComboBox(AI_ENGINES)
     private val customEngineServer = JBTextField()
@@ -159,11 +159,11 @@ class AppSettingsComponent(settings: AutoDevSettingsState) {
     }
 
     private fun getOpenAiModel(): String {
-        return openAiModel.selectedItem?.toString() ?: OPENAI_MODEL[0]
+        return openAiModel.text
     }
 
     private fun setOpenAiModel(newText: String) {
-        openAiModel.selectedItem = newText
+        openAiModel.text = newText
     }
 
     private fun getGitType(): String {

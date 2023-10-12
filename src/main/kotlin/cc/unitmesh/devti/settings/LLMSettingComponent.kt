@@ -21,7 +21,7 @@ class LLMSettingComponent(private val settings: AutoDevSettingsState) {
     }
     private val delaySecondsParam by LLMParam.creating { Editable(settings.delaySeconds) }
     private val maxTokenLengthParam by LLMParam.creating { Editable(settings.maxTokenLength) }
-    private val openAIModelsParam by LLMParam.creating { ComboBox(settings.openAiModel, OPENAI_MODEL.toList()) }
+    private val openAIModelsParam by LLMParam.creating { Editable(settings.openAiModel) }
     private val openAIKeyParam by LLMParam.creating { Password(settings.openAiKey) }
     private val customOpenAIHostParam: LLMParam by LLMParam.creating { Editable(settings.customOpenAiHost) }
 
