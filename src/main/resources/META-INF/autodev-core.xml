@@ -151,24 +151,24 @@
 <!--            <add-to-group group-id="ShowIntentionsGroup" relative-to-action="ShowIntentionActions" anchor="after"/>-->
 <!--        </group>-->
 
-        <group id="org.intellij.sdk.action.GroupedActions" popup="true" text="AutoDev Chat" description="AutoDev chat">
+        <group id="org.intellij.sdk.action.GroupedActions" popup="true" text="AI编程助手" description="AutoDev chat">
             <action id="cc.unitmesh.devti.actions.chat.ChatBotExplainAction"
-                    class="cc.unitmesh.devti.actions.chat.ChatBotExplainAction" text="Explain This"
+                    class="cc.unitmesh.devti.actions.chat.ChatBotExplainAction" text="代码解读"
                     description="Ask AI about this code">
             </action>
 
             <action id="cc.unitmesh.devti.actions.chat.ChatBotRefactorAction"
-                    class="cc.unitmesh.devti.actions.chat.ChatBotRefactorAction" text="Refactor This"
+                    class="cc.unitmesh.devti.actions.chat.ChatBotRefactorAction" text="代码重构"
                     description="Ask AI refactor this code">
             </action>
 
             <action id="cc.unitmesh.devti.actions.chat.ChatWithThisAction"
-                    class="cc.unitmesh.devti.actions.chat.ChatWithThisAction" text="Chat with This"
+                    class="cc.unitmesh.devti.actions.chat.ChatWithThisAction" text="AI对话"
                     description="Ask AI chat with this code">
             </action>
 
             <action id="cc.unitmesh.devti.actions.chat.GenerateTestAction"
-                    class="cc.unitmesh.devti.actions.chat.GenerateTestAction" text="Write Test for This"
+                    class="cc.unitmesh.devti.actions.chat.GenerateTestAction" text="生成单元测试"
                     description="Ask AI write this code">
             </action>
 

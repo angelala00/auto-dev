@@ -69,10 +69,10 @@ $diff
 
     fun instruction(lang: String = ""): String {
         return when (this) {
-            EXPLAIN -> "Explain selected $lang code"
-            REFACTOR -> "Refactor the given $lang code"
+            EXPLAIN -> "请给出说用，解释选中的$lang"+"代码"
+            REFACTOR -> "重构选中的$lang"+"代码"
             CODE_COMPLETE -> "Complete $lang code, return rest code, no explaining"
-            GENERATE_TEST -> "Write unit test for given $lang code"
+            GENERATE_TEST -> "为选中的$lang"+"代码生成单元测试"
             FIX_ISSUE -> "Help me fix this issue"
             GEN_COMMIT_MESSAGE -> {
                 generateCommitMessage(prepareVcsContext())
