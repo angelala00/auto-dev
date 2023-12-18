@@ -1,6 +1,6 @@
 package cc.unitmesh.idea.provider
 
-import cc.unitmesh.devti.custom.LivingDocumentationType
+import cc.unitmesh.devti.custom.document.LivingDocumentationType
 import cc.unitmesh.devti.provider.LivingDocumentation
 import com.intellij.codeInsight.daemon.impl.CollectHighlightsUtil
 import com.intellij.openapi.command.WriteCommandAction
@@ -12,7 +12,6 @@ import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.util.IncorrectOperationException
 
 class JavaLivingDocumentation : LivingDocumentation {
-    override val docToolName: String = "javadoc"
     override val forbiddenRules: List<String> = listOf(
         "do not return example code",
         "do not use @author and @version tags"

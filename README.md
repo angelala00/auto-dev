@@ -1,19 +1,20 @@
-# AutoDev
-
 <p align="center">
   <img src="plugin/src/main/resources/META-INF/pluginIcon.svg" width="160px" height="160px"  alt="logo" />
 </p>
-
+<h1 align="center">AutoDev</h1>
 <p align="center">
   <a href="https://github.com/unit-mesh/auto-dev/actions/workflows/build.yml">
-    <img src="https://github.com/unit-mesh/auto-dev/actions/workflows/build.yml/badge.svg" alt="Build">
+    <img src="https://github.com/unit-mesh/auto-dev/actions/workflows/build.yml/badge.svg" alt="Build" />
   </a>
   <a href="https://plugins.jetbrains.com/plugin/21520-autodev">
-    <img src="https://img.shields.io/jetbrains/plugin/v/21520-autodev.svg" alt="Version">
+    <img src="https://img.shields.io/jetbrains/plugin/v/21520-autodev.svg" alt="Version" />
   </a>
   <a href="https://plugins.jetbrains.com/plugin/21520-autodev">
-    <img src="https://img.shields.io/jetbrains/plugin/d/21520-autodev.svg" alt="Downloads">
+    <img src="https://img.shields.io/jetbrains/plugin/d/21520-autodev.svg" alt="Downloads" />
   </a>
+  <a href="https://github.com/unit-mesh/chocolate-factory">
+    <img src="https://img.shields.io/badge/powered_by-chocolate_factory-blue?logo=kotlin&logoColor=fff" alt="Powered By" />
+  </a>  
 </p>
 
 > 🧙‍AutoDev: The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful
@@ -21,9 +22,15 @@
 
 [Read the docs →](https://ide.unitmesh.cc/)
 
+AutoDev Overview:
+
+<p align="center">
+  <img src="docs/autodev-overview.svg" width="100%" height="100%"  alt="Overview" />
+</p>
+
 Features:
 
-- Languages support: Java, Kotlin, Python, JavaScript or others...
+- Languages support: Java, Kotlin, Python, JavaScript/TypeScript, Goland, Rust or others...
 - Auto development mode.
     - With DevTi Protocol (like `devti://story/github/1102`) will auto generate
       Model-Controller-Service-Repository code.
@@ -41,10 +48,12 @@ Features:
     - Custom specification of prompt.
     - Custom intention action. You can add your own intention action.
     - Custom LLM Server. You can customize your LLM Server in `Settings` -> `Tools` -> `AutoDev`
-
-### Development
-
-- Custom Language: [docs/custom-language.md](docs/custom-language.md)
+    - Custom Living documentation.
+    - Team prompts. Customize your team prompts in codebase, and distribute to your team.
+    - Custom Quick Action. You can add your own quick action.
+- Miscellaneous
+    - CI/CD support. AutoDev will auto generate CI/CD config file.
+    - Dockerfile support. AutoDev will auto generate Dockerfile.
 
 ### Demo
 
@@ -62,6 +71,12 @@ Video demo (Bilibili) - 中文
   sends to the server.
 - [GitHub Copilot](https://github.com/saschaschramm/github-copilot) a small part of Copilot Performance logs.
 - [花了大半个月，我终于逆向分析了Github Copilot](https://github.com/mengjian-github/copilot-analysis)
+
+## Who is using AutoDev?
+
+Welcome to add your company here.
+
+- Thoughtworks, a leading technology consultancy.
 
 ## License
 

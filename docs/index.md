@@ -20,14 +20,23 @@ permalink: /
   <a href="https://plugins.jetbrains.com/plugin/21520-autodev">
     <img src="https://img.shields.io/jetbrains/plugin/d/21520-autodev.svg" alt="Downloads">
   </a>
+  <a href="https://github.com/unit-mesh/chocolate-factory">
+    <img src="https://img.shields.io/badge/powered_by-chocolate_factory-blue?logo=kotlin&logoColor=fff" alt="Powered By" />
+  </a>  
 </p>
 
 > 🧙‍AutoDev: The AI-powered coding wizard with multilingual support 🌐, auto code generation 🏗️, and a helpful
 > bug-slaying assistant 🐞! Customizable prompts 🎨 and a magic Auto Testing feature 🧪 included! 🚀
 
+AutoDev Overview:
+
+<p align="center">
+  <img src="autodev-overview.svg" width="100%" height="100%"  alt="Overview" />
+</p>
+
 Features:
 
-- Languages support: Java, Kotlin, Python, JavaScript or others...
+- Languages support: Java, Kotlin, Python, JavaScript/TypeScript, Goland, Rust or others...
 - Auto development mode.
     - With DevTi Protocol (like `devti://story/github/1102`) will auto generate
       Model-Controller-Service-Repository code.
@@ -45,3 +54,8 @@ Features:
     - Custom specification of prompt.
     - Custom intention action. You can add your own intention action.
     - Custom LLM Server. You can customize your LLM Server in `Settings` -> `Tools` -> `AutoDev`
+    - Custom Living documentation.
+    - Team prompts. Customize your team prompts in codebase, and distribute to your team.
+- Miscellaneous
+    - CI/CD support. AutoDev will auto generate CI/CD config file.
+    - Dockerfile support. AutoDev will auto generate Dockerfile.

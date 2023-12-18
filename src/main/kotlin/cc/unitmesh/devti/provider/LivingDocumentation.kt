@@ -1,6 +1,6 @@
 package cc.unitmesh.devti.provider
 
-import cc.unitmesh.devti.custom.LivingDocumentationType
+import cc.unitmesh.devti.custom.document.LivingDocumentationType
 import com.intellij.lang.Language
 import com.intellij.lang.LanguageExtension
 import com.intellij.openapi.editor.Editor
@@ -15,9 +15,10 @@ import com.intellij.psi.PsiNameIdentifierOwner
  * 3. living documentation
  */
 interface LivingDocumentation {
-    val docToolName: String
-
     val forbiddenRules: List<String>
+
+    val parameterTagInstruction: String get() = "use @param tag"
+    val returnTagInstruction: String get() = "use @return tag"
 
     fun startEndString(type: LivingDocumentationType): Pair<String, String>
 
