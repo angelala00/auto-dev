@@ -92,6 +92,9 @@ class OpenAIProvider(val project: Project) : LLMProvider {
         val completionRequest = prepareRequest(promptText, systemPrompt)
 
         return callbackFlow {
+            val resultStr = StringBuilder()
+
+
             withContext(Dispatchers.IO) {
                 service.streamChatCompletion(completionRequest)
                     .doOnError{ error ->
@@ -102,30 +105,38 @@ class OpenAIProvider(val project: Project) : LLMProvider {
                         if (response.choices.isNotEmpty()) {
                             val completion = response.choices[0].message
                             if (completion != null && completion.content != null) {
+                                resultStr.append(completion.content)
                                 trySend(completion.content)
                             }
                         }
                     }
-
                 close()
             }
+            //todo 禁止history
+            //val message = ChatMessage(ChatRole.Assistant.roleName(), resultStr.toString())
+            //messages.add(message)
         }
     }
 
     private fun prepareRequest(promptText: String, systemPrompt: String): ChatCompletionRequest? {
+        messages.clear()
         if (messages.isEmpty()) {
             val systemMessage = ChatMessage(ChatMessageRole.SYSTEM.value(), systemPrompt)
             messages.add(systemMessage)
         }
 
-        val systemMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
+        val userMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
 
-        historyMessageLength += promptText.length
-        if (historyMessageLength > maxTokenLength) {
-            messages.clear()
+        //todo 禁止history
+//        historyMessageLength += promptText.length
+//        if (historyMessageLength > maxTokenLength) {
+//            messages.clear()
+//        }
+        if(messages.isNotEmpty() && messages.size>1){
+            messages.add(ChatMessage(ChatRole.Assistant.roleName(), ""))
         }
 
-        messages.add(systemMessage)
+        messages.add(userMessage)
 
         return ChatCompletionRequest.builder()
             .model(openAiVersion)

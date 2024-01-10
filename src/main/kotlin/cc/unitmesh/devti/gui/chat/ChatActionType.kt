@@ -55,9 +55,11 @@ $diff
     fun instruction(lang: String = ""): String {
         return when (this) {
             EXPLAIN -> "请给出说用，解释选中的$lang"+"代码"
-            REFACTOR -> "重构选中的$lang"+"代码"
+//            REFACTOR -> "重构选中的$lang"+"代码"
+            REFACTOR -> "找出下面$lang" + "代码中的错误，并给出修复建议，如果没有明显错误，则回答无明显错误。请尽量使用中文回答"
             CODE_COMPLETE -> "Complete $lang code, return rest code, no explaining"
-            GENERATE_TEST -> "为选中的$lang"+"代码生成单元测试"
+ //           GENERATE_TEST -> "为选中的$lang"+"代码生成单元测试"
+            GENERATE_TEST -> "为下面的$lang"+"代码生成单元测试，单元测试尽可能的考虑多种场景，比如正向测试和逆向测试场景。请尽量使用中文回答"
             FIX_ISSUE -> "Help me fix this issue"
             GEN_COMMIT_MESSAGE -> generateCommitMessage(prepareVcsContext())
             CREATE_CHANGELOG -> "generate release note"
