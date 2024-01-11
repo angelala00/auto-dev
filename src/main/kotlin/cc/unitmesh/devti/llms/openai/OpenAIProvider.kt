@@ -125,17 +125,16 @@ class OpenAIProvider(val project: Project) : LLMProvider {
             messages.add(systemMessage)
         }
 
-        val userMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
-
-        //todo 禁止history
-//        historyMessageLength += promptText.length
-//        if (historyMessageLength > maxTokenLength) {
-//            messages.clear()
-//        }
-        if(messages.isNotEmpty() && messages.size>1){
-            messages.add(ChatMessage(ChatRole.Assistant.roleName(), ""))
+        historyMessageLength += promptText.length
+        if (historyMessageLength > maxTokenLength) {
+            messages.clear()
         }
 
+//        if(messages.isNotEmpty() && messages.size>1){
+//            messages.add(ChatMessage(ChatRole.Assistant.roleName(), ""))
+//        }
+
+        val userMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
         messages.add(userMessage)
 
         return ChatCompletionRequest.builder()
