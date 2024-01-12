@@ -56,10 +56,10 @@ $diff
         return when (this) {
             EXPLAIN -> "请给出说用，解释选中的$lang"+"代码"
 //            REFACTOR -> "重构选中的$lang"+"代码"
-            REFACTOR -> "作为一名资深$lang" + "代码开发工程师，发现代码中的错误并给出修复建议，如果没有明显错误，则回复无错误"
+            REFACTOR -> "作为一名资深$lang" + "代码开发工程师，发现代码中的错误并给出修复建议，如果没有明显错误，则回复无错误。代码如下"
             CODE_COMPLETE -> "Complete $lang code, return rest code, no explaining"
-            GENERATE_TEST -> "作为一名资深$lang"+"代码开发工程师，使用Spring和Junit框架，为每个public方法生成单元测试，" +
-                    "测试用例需要对输入参数的有效性进行验证，确保系统能正确处理各种异常情况，同时确保代码的完整性、规范性、安全健壮性，能够正常运行。"
+            GENERATE_TEST -> "作为一名资深$lang"+"代码开发工程师，使用Spring和Junit框架，为每个public方法生成2个以上单元测试代码，" +
+                    "测试用例需要对输入参数的有效性进行验证，校验被测试代码的处理逻辑包含了可能发生的异常情况，确保代码的完整性、规范性、安全健壮性，生成的单元测试代码能够正常运行。被测试代码如下"
             FIX_ISSUE -> "Help me fix this issue"
             GEN_COMMIT_MESSAGE -> generateCommitMessage(prepareVcsContext())
             CREATE_CHANGELOG -> "generate release note"
