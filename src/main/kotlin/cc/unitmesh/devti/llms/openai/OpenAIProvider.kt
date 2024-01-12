@@ -92,8 +92,6 @@ class OpenAIProvider(val project: Project) : LLMProvider {
         val completionRequest = prepareRequest(promptText, systemPrompt)
 
         return callbackFlow {
-            val resultStr = StringBuilder()
-
 
             withContext(Dispatchers.IO) {
                 service.streamChatCompletion(completionRequest)
@@ -105,16 +103,12 @@ class OpenAIProvider(val project: Project) : LLMProvider {
                         if (response.choices.isNotEmpty()) {
                             val completion = response.choices[0].message
                             if (completion != null && completion.content != null) {
-                                resultStr.append(completion.content)
                                 trySend(completion.content)
                             }
                         }
                     }
                 close()
             }
-            //todo 禁止history
-            //val message = ChatMessage(ChatRole.Assistant.roleName(), resultStr.toString())
-            //messages.add(message)
         }
     }
 
