@@ -113,23 +113,20 @@ class OpenAIProvider(val project: Project) : LLMProvider {
     }
 
     private fun prepareRequest(promptText: String, systemPrompt: String): ChatCompletionRequest? {
-        messages.clear()
         if (messages.isEmpty()) {
             val systemMessage = ChatMessage(ChatMessageRole.SYSTEM.value(), systemPrompt)
             messages.add(systemMessage)
         }
+
+        val systemMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
 
         historyMessageLength += promptText.length
         if (historyMessageLength > maxTokenLength) {
             messages.clear()
         }
 
-//        if(messages.isNotEmpty() && messages.size>1){
-//            messages.add(ChatMessage(ChatRole.Assistant.roleName(), ""))
-//        }
-
-        val userMessage = ChatMessage(ChatMessageRole.USER.value(), promptText)
-        messages.add(userMessage)
+        messages.add(systemMessage)
+        logger.info("messages length: ${messages.size}")
 
         return ChatCompletionRequest.builder()
             .model(openAiVersion)
